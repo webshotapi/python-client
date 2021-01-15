@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>webshotapi package &mdash; WebShotApi 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> WebShotApi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">webshotapi package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-webshotapi.ApiClient">webshotapi.ApiClient module</a></li>
+<li><a class="reference internal" href="#module-webshotapi.ApiException">webshotapi.ApiException module</a></li>
+<li><a class="reference internal" href="#module-webshotapi.Project">webshotapi.Project module</a></li>
+<li><a class="reference internal" href="#module-webshotapi.RESTResponse">webshotapi.RESTResponse module</a></li>
+<li><a class="reference internal" href="#module-webshotapi.RequestClient">webshotapi.RequestClient module</a></li>
+<li><a class="reference internal" href="#module-webshotapi.version">webshotapi.version module</a></li>
+<li><a class="reference internal" href="#module-webshotapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WebShotApi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>webshotapi package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/webshotapi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="webshotapi-package">
+<h1>webshotapi package<a class="headerlink" href="#webshotapi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-webshotapi.ApiClient">
+<span id="webshotapi-apiclient-module"></span><h2>webshotapi.ApiClient module<a class="headerlink" href="#module-webshotapi.ApiClient" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="webshotapi.ApiClient.ApiClient">
+<em class="property">class </em><code class="sig-prename descclassname">webshotapi.ApiClient.</code><code class="sig-name descname">ApiClient</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">api_version='v1'</em>, <em class="sig-param">api_host='https://api.webshotapi.com'</em>, <em class="sig-param">pools_size=4</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiClient.ApiClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#webshotapi.RequestClient.RequestClient" title="webshotapi.RequestClient.RequestClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">webshotapi.RequestClient.RequestClient</span></code></a></p>
+<dl class="method">
+<dt id="webshotapi.ApiClient.ApiClient.extract">
+<code class="sig-name descname">extract</code><span class="sig-paren">(</span><em class="sig-param">link: str</em>, <em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiClient.ApiClient.extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract html selectors with css styles, words with coordinates(x,y,width,height).
+You can also extract html of rendered page and clean text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – link to website to take screenshot</p></li>
+<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/api/">https://webshotapi.com/docs/api/</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.ApiClient.ApiClient.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">link: str</em>, <em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiClient.ApiClient.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take screenshot and return pdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – link to website to take screenshot</p></li>
+<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/api/">https://webshotapi.com/docs/api/</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.ApiClient.ApiClient.screenshot_jpg">
+<code class="sig-name descname">screenshot_jpg</code><span class="sig-paren">(</span><em class="sig-param">link: str</em>, <em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiClient.ApiClient.screenshot_jpg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take screenshot and return jpg image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – link to website to take screenshot</p></li>
+<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/api/">https://webshotapi.com/docs/api/</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.ApiClient.ApiClient.screenshot_json">
+<code class="sig-name descname">screenshot_json</code><span class="sig-paren">(</span><em class="sig-param">link: str</em>, <em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiClient.ApiClient.screenshot_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take screenshot and return json data. You can also extract html and text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – link to website to take screenshot</p></li>
+<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/api/">https://webshotapi.com/docs/api/</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.ApiClient.ApiClient.screenshot_png">
+<code class="sig-name descname">screenshot_png</code><span class="sig-paren">(</span><em class="sig-param">link: str</em>, <em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiClient.ApiClient.screenshot_png" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take screenshot and return png image</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – link to website to take screenshot</p></li>
+<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/api/">https://webshotapi.com/docs/api/</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Example</dt>
+<dd class="field-even"><p>import webshotapi</p>
+<p>TOKEN = ‘PUT_YOUR_TOKEN_HERE’</p>
+<p>client = webshotapi(TOKEN)</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>RESTResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-webshotapi.ApiException">
+<span id="webshotapi-apiexception-module"></span><h2>webshotapi.ApiException module<a class="headerlink" href="#module-webshotapi.ApiException" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="webshotapi.ApiException.ApiException">
+<em class="property">exception </em><code class="sig-prename descclassname">webshotapi.ApiException.</code><code class="sig-name descname">ApiException</code><span class="sig-paren">(</span><em class="sig-param">status=None</em>, <em class="sig-param">reason=None</em>, <em class="sig-param">http_resp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.ApiException.ApiException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-webshotapi.Project">
+<span id="webshotapi-project-module"></span><h2>webshotapi.Project module<a class="headerlink" href="#module-webshotapi.Project" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="webshotapi.Project.Project">
+<em class="property">class </em><code class="sig-prename descclassname">webshotapi.Project.</code><code class="sig-name descname">Project</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">api_version='v1'</em>, <em class="sig-param">api_host='https://api.webshotapi.com'</em>, <em class="sig-param">pools_size=4</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#webshotapi.RequestClient.RequestClient" title="webshotapi.RequestClient.RequestClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">webshotapi.RequestClient.RequestClient</span></code></a></p>
+<dl class="method">
+<dt id="webshotapi.Project.Project.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – dict with data for new project</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return project data by id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.projects">
+<code class="sig-name descname">projects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all projects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#webshotapi.RESTResponse.RESTResponse" title="webshotapi.RESTResponse.RESTResponse">RESTResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove project by id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – project id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">id: int</em>, <em class="sig-param">data: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update existing project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – project id</p></li>
+<li><p><strong>data</strong> – project data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.url_add">
+<code class="sig-name descname">url_add</code><span class="sig-paren">(</span><em class="sig-param">id: int</em>, <em class="sig-param">urls: list</em>, <em class="sig-param">params: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.url_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add url to download for selected project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – project_id</p></li>
+<li><p><strong>urls</strong> – list with urls</p></li>
+<li><p><strong>params</strong> – dict with parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.url_delete">
+<code class="sig-name descname">url_delete</code><span class="sig-paren">(</span><em class="sig-param">id: int</em>, <em class="sig-param">url_id: int</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.url_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete specific url for project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – project id</p></li>
+<li><p><strong>url_id</strong> – link id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.Project.Project.urls_get">
+<code class="sig-name descname">urls_get</code><span class="sig-paren">(</span><em class="sig-param">id: int</em>, <em class="sig-param">page=1</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Project.Project.urls_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get urls for project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – project id</p></li>
+<li><p><strong>page</strong> – page number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-webshotapi.RESTResponse">
+<span id="webshotapi-restresponse-module"></span><h2>webshotapi.RESTResponse module<a class="headerlink" href="#module-webshotapi.RESTResponse" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="webshotapi.RESTResponse.RESTResponse">
+<em class="property">class </em><code class="sig-prename descclassname">webshotapi.RESTResponse.</code><code class="sig-name descname">RESTResponse</code><span class="sig-paren">(</span><em class="sig-param">resp</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RESTResponse.RESTResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">io.IOBase</span></code></p>
+<dl class="method">
+<dt id="webshotapi.RESTResponse.RESTResponse.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RESTResponse.RESTResponse.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return data downloaded from api</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>return data from api</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RESTResponse.RESTResponse.getheader">
+<code class="sig-name descname">getheader</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RESTResponse.RESTResponse.getheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a given response header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Header name</p></li>
+<li><p><strong>default</strong> – Set default value if header not exists</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RESTResponse.RESTResponse.getheaders">
+<code class="sig-name descname">getheaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RESTResponse.RESTResponse.getheaders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of the response headers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RESTResponse.RESTResponse.is_json">
+<code class="sig-name descname">is_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RESTResponse.RESTResponse.is_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check that response data is json document</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RESTResponse.RESTResponse.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RESTResponse.RESTResponse.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save response data to file.
+If you set file path without extension method will auto detect output file extension from mime type.
+Example you take screenshot and want to save to jpg.
+Set path to:
+1. /tmp/example_1_file_name -&gt; will detect extension from mime type and save file to /tmp/example_1_file_name.jpg
+2. /tmp/example_2_file_name.jpg -&gt; extension is in file path so dont detect extension from mime and save to /tmp/example_2_file_name.jpg</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – string file path</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>return saved file path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-webshotapi.RequestClient">
+<span id="webshotapi-requestclient-module"></span><h2>webshotapi.RequestClient module<a class="headerlink" href="#module-webshotapi.RequestClient" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="webshotapi.RequestClient.RequestClient">
+<em class="property">class </em><code class="sig-prename descclassname">webshotapi.RequestClient.</code><code class="sig-name descname">RequestClient</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">api_version='v1'</em>, <em class="sig-param">api_host='https://api.webshotapi.com'</em>, <em class="sig-param">pools_size=4</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="webshotapi.RequestClient.RequestClient.add_multi">
+<code class="sig-name descname">add_multi</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient.add_multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add to concurrency request mode queue new request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – tuple of request example:
+(‘screenshot/json’,’POST’, {url:’https://example.com’,width:1920})
+(REST_SERVER_PATH, HTTP_METHOD, PARAMS)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RequestClient Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RequestClient.RequestClient.exec">
+<code class="sig-name descname">exec</code><span class="sig-paren">(</span><em class="sig-param">on_request_completed=None</em>, <em class="sig-param">on_requests_error=None</em>, <em class="sig-param">max_requests: int = None</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient.exec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all requests added to concurrency mode queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on_request_completed</strong> – function fired async when request return data</p></li>
+<li><p><strong>on_requests_error</strong> – function fired async when request return error</p></li>
+<li><p><strong>max_requests</strong> – How much concurrency requests can send to server in same time.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RequestClient.RequestClient.info">
+<code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘
+Get info about account. Return info about free requests etc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RequestClient.RequestClient.multi">
+<code class="sig-name descname">multi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient.multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create concurrency requests mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>RequestClient Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RequestClient.RequestClient.request">
+<code class="sig-name descname">request</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">method</em>, <em class="sig-param">params={}</em>, <em class="sig-param">headers={}</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send request to REST server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – REST path on server</p></li>
+<li><p><strong>method</strong> – HTTP METHOD [GET,POST,PUT,DELETE]</p></li>
+<li><p><strong>params</strong> – dictionary of parameters to send</p></li>
+<li><p><strong>headers</strong> – dictionary of headers to send</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RESTResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="webshotapi.RequestClient.RequestClient.run_request">
+<code class="sig-name descname">run_request</code><span class="sig-paren">(</span><em class="sig-param">method</em>, <em class="sig-param">url</em>, <em class="sig-param">query_params=None</em>, <em class="sig-param">headers=None</em>, <em class="sig-param">body=None</em>, <em class="sig-param">post_params=None</em>, <em class="sig-param">_preload_content=True</em>, <em class="sig-param">_request_timeout=30</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.RequestClient.run_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="webshotapi.RequestClient.worker">
+<code class="sig-prename descclassname">webshotapi.RequestClient.</code><code class="sig-name descname">worker</code><span class="sig-paren">(</span><em class="sig-param">d</em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.RequestClient.worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘
+Worker function for concurrency requests</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-webshotapi.version">
+<span id="webshotapi-version-module"></span><h2>webshotapi.version module<a class="headerlink" href="#module-webshotapi.version" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-webshotapi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-webshotapi" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, webshotapi.com.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
