@@ -10,19 +10,23 @@ class RESTResponse(io.IOBase):
         :param resp:
             response object from urllib3
         '''
-        self.urllib3_response = resp
-        self.status = resp.status
+
+        self.response = resp
+        self.status = resp.status_code
         self.reason = resp.reason
+        self.headers = {}
+        for k in resp.headers:
+            self.headers[str(k).lower()] = str(resp.headers[k])
 
         try:
-            self.data = json.loads(resp.data.decode('utf-8'))
+            self.data = json.loads(resp.content.decode('utf-8'))
         except ValueError:
-            self.data = resp.data
+            self.data = resp.content
 
 
     def getheaders(self):
         """Returns a dictionary of the response headers."""
-        return self.urllib3_response.getheaders()
+        return self.headers
 
     def is_json(self):
         '''
@@ -48,7 +52,10 @@ class RESTResponse(io.IOBase):
         :rtype:
             string
         '''
-        return self.urllib3_response.getheader(name, default)
+        if name not in self.headers:
+            return default
+
+        return self.headers[name]
 
     def get_data(self):
         '''
