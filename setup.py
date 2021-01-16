@@ -5,7 +5,7 @@ with open('README.md','r') as r:
 
 setup(
     name='webshotapi', 
-    version='1.0.0', 
+    version='1.0.1',
     packages=find_packages(),
     author="WebShotApi.com",
     author_email="contact@webshotapi.com",
