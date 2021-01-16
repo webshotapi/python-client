@@ -38,7 +38,7 @@ class RequestClient:
         self.is_multi = False
         self.pool = None
         self.multi_requests = []
-        self.version = '1.0.0'
+        self.version = '1.0.1'
 
     def __del__(self):
         if self.pool is not None:
@@ -163,7 +163,7 @@ class RequestClient:
                                               preload_content=_preload_content,
                                               timeout=timeout,
                                               headers=headers)
-        except urllib3.exceptions.self.dataSSLError as e:
+        except Exception as e:
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
