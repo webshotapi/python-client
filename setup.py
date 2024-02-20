@@ -7,6 +7,9 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 with open('README.md','r') as r:
     long_description = r.read()
 
+with open(os.path.join(dir_path, 'requirements.txt')) as r:
+    requirements = r.readlines()
+
 setup(
     name='webshotapi',
     version=__version__,
@@ -34,7 +37,7 @@ setup(
     license="MIT",
     install_requires=[
         x.strip()
-        for x in open(os.path.join(dir_path, 'requirements.txt')).readlines()
+        for x in requirements
         if x and not x.startswith('#')
     ],
     python_requires='>=3.8',
