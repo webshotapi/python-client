@@ -1,12 +1,13 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 from webshotapi.version import __version__
+
 with open('README.md','r') as r:
     long_description = r.read()
 
 setup(
     name='webshotapi', 
     version=__version__,
-    packages=find_packages(),
+    packages=find_namespace_packages(include=['webshotapi.*']),
     author="WebShotApi.com",
     author_email="contact@webshotapi.com",
     description="Api client for WebShotApi.com. \
@@ -28,10 +29,5 @@ setup(
         "Source Code": "https://github.com/webshotapi/website-screenshot-python-client",
     },
     licence="MIT",
-    install_requires=[
-        x.strip()
-        for x in open('requirements.txt').readlines()
-        if x and not x.startswith('#')
-    ],
-    python_requires='>=3.6',
+    python_requires='>=3.8',
 )
