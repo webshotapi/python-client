@@ -15,21 +15,19 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from webshotapi.Project import Project
-from webshotapi.ApiException import ApiException
+from webshotapi import Client
 
 if __name__ == "__main__":
     try:
-        TOKEN = 'PLACE HERE YOU TOKEN'
-        client = Project(TOKEN)
+        API_TOKEN = os.environ['WEBSHOTAPI_API_KEY']
+        client = Client(API_TOKEN)
 
         #create new project
-        result = client.projects()
+        result = client.projects().get_all()
+        print(result.data())
 
-        print(result.data)
 
-
-    except ApiException as e:
+    except Exception as e:
         print("Error:")
         print(e)
     #print(result)

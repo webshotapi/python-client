@@ -15,35 +15,33 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from webshotapi.Project import Project
-from webshotapi.ApiException import ApiException
+from webshotapi import Client
 
 if __name__ == "__main__":
     try:
-        TOKEN = 'PLACE HERE YOU TOKEN'
-        client = Project(TOKEN)
+        API_TOKEN = os.environ['WEBSHOTAPI_API_KEY']
+        client = Client(API_TOKEN)
 
         #create new project
-        result = client.create({
+        result = client.projects().create({
             "name": "Test project added from api",
-            "output_format": "json",
-            "active": "yes"
+            "status": "active"
         })
 
-        if(result.data['status']=="OK"):
-            new_project_id = result.data['id']
-            print("Project id: ",new_project_id," created")
+        if(result.status_code == 201):
+            new_project_id = result.data()['id']
+            print(f"Project id: {new_project_id} created")
 
             # add urls to project
-            client.url_add(
+            urls_result = client.projects().url_add(
                 new_project_id,
+                "screenshot",
                 [
                     'https://www.example.com',
                     'https://www.example2.com',
                     'https://www.example3.com'
                 ],
                 {
-                    "method_name": "screenshot",
                     "response_type": "image",
                     "image_type": "png",
                     "remove_modals": 1,
@@ -78,13 +76,12 @@ if __name__ == "__main__":
                 })
 
             print("New urls added")
+            print(urls_result.data())
         else:
             print("Error with create project")
 
 
-
-
-    except ApiException as e:
+    except Exception as e:
         print("Error:")
         print(e)
     #print(result)
