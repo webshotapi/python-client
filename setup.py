@@ -2,7 +2,11 @@ from setuptools import setup, find_packages
 from webshotapi.version import __version__
 import os
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
+
+ROOT_PATH = os.path.dirname(__file__)
+PKG_NAME = "webshotapi"
+PKG_PATH = os.path.join(ROOT_PATH, PKG_NAME.replace("-", "_"))
+
 
 with open('README.md','r') as r:
     long_description = r.read()
@@ -13,7 +17,7 @@ with open('requirements.txt', 'r') as r:
 setup(
     name='webshotapi',
     version=__version__,
-    packages=find_packages(),
+    packages=find_packages(exclude=["tests", "tests.*"]),
     author="WebShotApi.com",
     author_email="contact@webshotapi.com",
     description="Api client for WebShotApi.com. \
@@ -35,10 +39,5 @@ setup(
         "Source Code": "https://github.com/webshotapi/website-screenshot-python-client",
     },
     license="MIT",
-    install_requires=[
-        x.strip()
-        for x in requirements
-        if x and not x.startswith('#')
-    ],
     python_requires='>=3.8',
 )
