@@ -204,7 +204,7 @@ if __name__ == "__main__":
 Full documentation about our api you can find in this website [API DOCS](https://webshotapi.com/docs/python/)
 
 ## About our service
-You can use our service with free plan for 100 free requests 
+You can use our service with free plan with 100 free requests 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
