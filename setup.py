@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
-
+from webshotapi.version import __version__
 with open('README.md','r') as r:
     long_description = r.read()
 
 setup(
     name='webshotapi', 
-    version='1.0.1',
+    version=__version__,
     packages=find_packages(),
     author="WebShotApi.com",
     author_email="contact@webshotapi.com",
