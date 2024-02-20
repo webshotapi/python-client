@@ -24,3 +24,10 @@ python -m pip install pytest
 source venv/bin/activate
 venv/bin/pytest ./tests
 ```
+
+# Build Docs
+```sh
+python -m pip install sphinx
+sphinx-apidoc -o docs-source webshotapi/
+sphinx-build -b html docs-source ./docs
+```

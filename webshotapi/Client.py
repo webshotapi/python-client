@@ -1,14 +1,4 @@
 #  Copyright (c) 2020. WebShotApi All right reserved
-#  Licensed under the Apache License, Version 2.0 (the "License");
-#  you may not use this file except in compliance with the License.
-#  You may obtain a copy of the License at
-#  http://www.apache.org/licenses/LICENSE-2.0
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS,
-#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  See the License for the specific language governing permissions and
-#  limitations under the License.
-
 from gawsoft.api_client import Request, Response
 from .Projects import Projects
 from .version import __version__
@@ -42,7 +32,7 @@ class Client(Request):
         :param url:
             link to website to take screenshot
         :param params:
-            dict with parameters check available parameters in https://webshotapi.com/docs/api/
+            dict with parameters check available parameters in https://webshotapi.com/docs/rest/
         :example:
            import webshotapi\n
            TOKEN = 'PUT_YOUR_TOKEN_HERE'
@@ -50,7 +40,7 @@ class Client(Request):
            client = webshotapi(TOKEN)
 
         :return:
-            RESTResponse object
+            Response object
         '''
         
         params['url'] = url
@@ -64,9 +54,9 @@ class Client(Request):
         :param url:
             link to website to take screenshot
         :param params:
-            dict with parameters check available parameters in https://webshotapi.com/docs/api/
+            dict with parameters check available parameters in https://webshotapi.com/docs/rest/
         :return:
-            RESTResponse object
+            Response object
         '''
 
         params['url'] = url
