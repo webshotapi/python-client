@@ -1,15 +1,14 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages,  find_namespace_packages
 from webshotapi.version import __version__
 import os
-from pip._internal.req import parse_requirements
 
 ROOT_PATH = os.path.dirname(__file__)
 PKG_NAME = "webshotapi"
 PKG_PATH = os.path.join(ROOT_PATH, PKG_NAME.replace("-", "_"))
 
-def load_requirements(fname):
-    reqs = parse_requirements(fname, session="test")
-    return [str(ir.req) for ir in reqs]
+def load_requirements(file_path='requirements.txt'):
+    with open(file_path, 'r') as file:
+        return [line.strip() for line in file if line.strip()]
 
 with open('README.md','r') as r:
     long_description = r.read()
@@ -38,7 +37,7 @@ setup(
         "Documentation": "https://webshotapi.com/docs/python/",
         "Source Code": "https://github.com/webshotapi/website-screenshot-python-client",
     },
-    install_requires=load_requirements("requirements.txt"),
+    install_requires=load_requirements(),
     license="MIT",
     python_requires='>=3.8',
 )
