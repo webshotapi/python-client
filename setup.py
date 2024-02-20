@@ -8,6 +8,7 @@ setup(
     name='webshotapi', 
     version=__version__,
     packages=find_namespace_packages(include=['webshotapi.*']),
+    namespace_packages=['webshotapi'],
     author="WebShotApi.com",
     author_email="contact@webshotapi.com",
     description="Api client for WebShotApi.com. \
