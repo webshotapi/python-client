@@ -34,7 +34,7 @@ setup(
     ],
     project_urls={
         "Bug Tracker": "https://github.com/webshotapi/website-screenshot-python-client/issues",
-        "Documentation": "https://webshotapi.com/docs/python/",
+        "Documentation": "https://webshotapi.com/",
         "Source Code": "https://github.com/webshotapi/website-screenshot-python-client",
     },
     install_requires=load_requirements(),
