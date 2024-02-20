@@ -26,7 +26,7 @@ setup(
         extract styles from HTML selectors(elements)",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://webshotapi.com/clients/python",
+    url="https://webshotapi.com",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -34,7 +34,7 @@ setup(
     ],
     project_urls={
         "Bug Tracker": "https://github.com/webshotapi/website-screenshot-python-client/issues",
-        "Documentation": "https://webshotapi.com/",
+        "Documentation": "http://webshotapi.com/docs/python/",
         "Source Code": "https://github.com/webshotapi/website-screenshot-python-client",
     },
     install_requires=load_requirements(),
