@@ -2,23 +2,24 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from webshotapi.ApiClient import ApiClient
-from webshotapi.ApiException import ApiException
+from webshotapi import Client
 
 if __name__ == "__main__":
     try:
-        TOKEN = 'PLACE HERE YOU TOKEN'
-        client = ApiClient(TOKEN)
+        API_TOKEN = os.environ['WEBSHOTAPI_API_KEY']
+        client = Client(API_TOKEN)
+
         result = client.extract('https://www.example.com',{
-            'extract_html': 1,
-            'extract_selectors': 1,
-            'extract_style': 1
+            'extract_html': True,
+            'extract_selectors': True,
+            'extract_style': 1,
+            'no_cache': True
         })
 
         print(result.save('/tmp/test_extract.json'))
 
 
-    except ApiException as e:
+    except Exception as e:
         print("Error:")
         print(e)
     #print(result)

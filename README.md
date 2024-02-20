@@ -1,7 +1,11 @@
 # WebShotApi.com API client for Python
 
-Take screenshot and save image in JPG, PNG, PDF. You can also extract selectors for all HTML elements with coordinates and css styles after browser rendering.
-In our api you can create project and send all you urls to queue. Our server will do all the work for you
+Capture and store website snapshots effortlessly with our SaaS service. 
+Save images in popular formats such as JPG, PNG, and PDF. 
+Additionally, extract selectors for every HTML element, 
+complete with coordinates and CSS styles post-browser rendering. 
+Utilize our API to create projects and seamlessly queue up all your URLs. 
+Let our servers handle the workload, ensuring a hassle-free experience for you.
 
 Full documentation about our api you can find in this website [Website screenshot API DOCS](https://webshotapi.com/docs/)
 
@@ -18,23 +22,32 @@ OR
 pip3 install webshotapi
 ```
 
-## API KEY
-Api key you can generate after register.
-[https://webshotapi.com/dashboard/api/](https://webshotapi.com/dashboard/api/)
+# Remove cookies popup before take sceenshot
+![Remove cookies before take screenshot](https://raw.githubusercontent.com/webshotapi/webshotapi-website-screenshot-php-client/6681d3d38ea13391a30b2e43b8c37191e2d41bef/images/remove-cookies-before-take-screenshot.png)
 
-## Usage
+Effortlessly remove annoying cookies pop-ups before capturing stunning screenshots. 
+Let our advanced AI algorithm transform the way you visualize websites, ensuring a cookie-free snapshot every time! [Read more](http://webshotapi.com/blog/remove-cookies-before-take-screenshot/)
+
+
+# API KEY
+Api key you can generate after register.
+[https://dashboard.webshotapi.com/api_keys](https://dashboard.webshotapi.com/api_keys)
+
+# Usage
 
 ### Take screenshot and save jpg to file
 ```python
-from ApiClient import ApiClient
-from ApiException import ApiException
+from webshotapi import Client
 
 if __name__ == "__main__":
     try:
         TOKEN = 'YOUR TOKEN HERE'
-        client = ApiClient(TOKEN)
-        result = client.screenshot_jpg('https://www.cnn.com',{
-            'remove_modals': 1
+        client = Client(TOKEN)
+        
+        result = client.screenshot(
+            'https://www.example.com',{
+            'remove_modals': True,
+            'no_cache': True
         })
 
         if result.save('/tmp/testa.jpg'):
@@ -42,23 +55,24 @@ if __name__ == "__main__":
         else:
             print("Error with save file")
 
-    except ApiException as e:
+    except Exception as e:
         print("Error:")
         print(e)
 ```
 
 ### Take screenshot and save PDF to file
-You can covert your html page to invoice in PDF.
+You can convert your html page to PDF. For example you can prepare html invoice template and convert that website to PDF
 ```python
-from ApiClient import ApiClient
-from ApiException import ApiException
+from webshotapi import Client
 
 if __name__ == "__main__":
     try:
         TOKEN = 'YOUR TOKEN HERE'
-        client = ApiClient(TOKEN)
-        result = client.screenshot_pdf('https://www.example.com',{
-            'remove_modals': 1
+        client = Client(TOKEN)
+        
+        result = client.pdf(
+            'https://www.example.com',{
+                'no_cache': 1
         })
 
         if result.save('/tmp/test.pdf'):
@@ -66,41 +80,38 @@ if __name__ == "__main__":
         else:
             print("Error with save file")
 
-    except ApiException as e:
+    except Exception as e:
         print("Error:")
         print(e)
 ```
 
 ### Extract words map and HTML elements with css styles after rendering
-Unique software to extract all selectors for HTML elements from website with css styles after browser rendering. Additionally you can extract all words with position (x,y,width, height, offset from previous word). Thank that you can build words map of website.
-
+Revolutionize your web development experience with our unparalleled software. Extract all selectors for HTML elements, complete with CSS styles, post-browser rendering. Furthermore, delve into the intricate details by extracting words along with their precise position data (x, y, width, height, offset from the previous word). This invaluable information allows you to construct a comprehensive words map of the entire website. Elevate your understanding and efficiency in website analysis and development like never before!
 #### Sample script:
 ```python
-
-from webshotapi.ApiClient import ApiClient
-from webshotapi.ApiException import ApiException
+from webshotapi import Client
 
 if __name__ == "__main__":
     try:
 
         #create object
         TOKEN = 'YOUR TOKEN HERE'
-        client = ApiClient(TOKEN)
+        client = Client(TOKEN)
 
         #send request
         result = client.extract('https://www.example.com',{
             'no_cache': 1,
             'extract_selectors': 1,
-            'extract_style': 1
+            'extract_style': 1,
             'extract_words': 1,
             'extract_html': 1,
             'extract_text': 1
         })
         
         #print json data from result
-        print(result.get_data())
+        print(result.data())
 
-    except ApiException as e:
+    except Exception as e:
         print("Error:")
         print(e)
 ```
@@ -108,45 +119,79 @@ if __name__ == "__main__":
 
 ```json
 {
-  "selectors": [
-    {
-      "xpath": "/html/body",
-      "x": 1212,
-      "y": 17,
-      "w": 117,
-      "h": 25,
-      "style": {
-        "visibility": "visible",
-        "display": "inline",
-        "fontWeight": "400",
-        "backgroundImage": "none",
-        "cursor": "pointer",
-        "fontSize": "22px",
-        "color": "rgb(255, 255, 255)",
-        "position": "static",
-        "textDecoration": "none solid rgb(255, 255, 255)",
-        "text-decoration-line": "none",
-        "backgroundColor": "rgba(0, 0, 0, 0)"
-      },
-      "class": ".col-12 col-sm-12",
-      "id": "#price",
-      "itemprop": "price"
-    }
+ "selectors": [
+      {
+         "xpath": "/html[1]",
+         "css_selector": "html",
+         "x": 0,
+         "y": 0,
+         "w": 1920,
+         "h": 413,
+         "style": {
+            "visibility": "visible",
+            "display": "block",
+            "fontWeight": "400",
+            "backgroundImage": "none",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "cursor": "auto",
+            "fontSize": "16px",
+            "color": "rgb(0, 0, 0)",
+            "position": "static",
+            "textDecoration": "none solid rgb(0, 0, 0)",
+            "textDecorationLine": "none",
+            "textDecorationColor": "rgb(0, 0, 0)",
+            "textDecorationStyle": "solid",
+            "textDecorationThickness": "auto",
+            "bottom": "auto",
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "zIndex": "auto",
+            "opacity": "1",
+            "backgroundRepeat": "repeat",
+            "borderWidth": "0px",
+            "textAlign": "start",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "marginBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "overflow": "visible",
+            "textIndent": "0px",
+            "textTransform": "none",
+            "letterSpacing": "normal",
+            "fontFamily": "\"Times New Roman\""
+         },
+         "attributes": {}
+      }
   ],
   "words": [
-    {
-      "xpath": "/html/body/div[1]/div[2]/div/div[2]/ul/li[5]/a",
-      "word": "Welcome",
-      "position": {
-        "x": 434.8,
-        "y": 343.4,
-        "w": 434,
-        "h": 43
-      },
-      "word_index": 2,
-      "offset": 14
-    }
+     {
+         "word": "permission.",
+         "position": {
+            "x": 660,
+            "y": 231,
+            "w": 92,
+            "h": 19
+         },
+         "word_index": 26,
+         "xpath": "/html[1]/body[1]/div[1]/p[1]",
+         "offset": 145
+      }
   ],
+  "page_properties": {
+      "viewport": {
+         "width": 1920,
+         "height": 1080
+      },
+      "document": {
+         "width": 1920,
+         "height": 1080
+      }
+   },
   "html": "<!doctype html><html lang='en' dir='ltr'><head><base hr...",
   "text": "Welcome in our page\nToday is Monday...",
   "screenshot_url": "https://api.webshotapi.com/v1/screenshot/?token=....&width=1920&height=960",
