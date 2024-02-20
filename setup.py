@@ -1,11 +1,14 @@
 from setuptools import setup, find_packages
 from webshotapi.version import __version__
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 with open('README.md','r') as r:
     long_description = r.read()
 
 setup(
-    name='webshotapi', 
+    name='webshotapi',
     version=__version__,
     packages=find_packages(),
     author="WebShotApi.com",
@@ -31,7 +34,7 @@ setup(
     license="MIT",
     install_requires=[
         x.strip()
-        for x in open('./requirements.txt').readlines()
+        for x in open(os.path.join(dir_path, 'requirements.txt')).readlines()
         if x and not x.startswith('#')
     ],
     python_requires='>=3.8',
