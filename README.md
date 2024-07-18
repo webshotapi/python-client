@@ -201,7 +201,7 @@ if __name__ == "__main__":
 ```
 
 ## API docs
-Full documentation about our api you can find in this website [API DOCS](https://webshotapi.com/docs/python/)
+Full documentation about our api you can find in this website [API DOCS](https://webshotapi.com/docs/sdk/python/)
 
 ## About our service
 You can use our service with free plan with 100 free requests 

@@ -34,7 +34,7 @@ setup(
     ],
     project_urls={
         "Bug Tracker": "https://github.com/webshotapi/python-client/issues",
-        "Documentation": "http://webshotapi.com/docs/python/",
+        "Documentation": "http://webshotapi.com/docs/sdk/python/",
         "Source Code": "https://github.com/webshotapi/python-client",
     },
     install_requires=load_requirements(),
