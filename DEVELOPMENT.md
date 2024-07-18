@@ -31,3 +31,8 @@ python -m pip install sphinx
 sphinx-apidoc -o docs-source webshotapi/
 sphinx-build -b html docs-source ./docs
 ```
+
+# Release
+```sh
+bin/release.sh
+```

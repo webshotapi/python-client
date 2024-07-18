@@ -33,9 +33,9 @@ setup(
         "Operating System :: OS Independent",
     ],
     project_urls={
-        "Bug Tracker": "https://github.com/webshotapi/website-screenshot-python-client/issues",
+        "Bug Tracker": "https://github.com/webshotapi/python-client/issues",
         "Documentation": "http://webshotapi.com/docs/python/",
-        "Source Code": "https://github.com/webshotapi/website-screenshot-python-client",
+        "Source Code": "https://github.com/webshotapi/python-client",
     },
     install_requires=load_requirements(),
     license="MIT",
