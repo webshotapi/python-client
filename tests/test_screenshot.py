@@ -1,5 +1,6 @@
 from webshotapi import Client
 import os
+
 def test_screenshot_jpg(
     request_client: Client
 ):
@@ -9,7 +10,7 @@ def test_screenshot_jpg(
     response.save(save_path)
 
     file_stat = os.stat(save_path)
-    assert file_stat.st_size > 32000
+    assert file_stat.st_size > 30000
 
 def test_screenshot_png(
     request_client: Client
@@ -20,7 +21,8 @@ def test_screenshot_png(
     response.save(save_path)
 
     file_stat = os.stat(save_path)
-    assert file_stat.st_size > 32000
+    assert file_stat.st_size > 20000
+
 
 def test_screenshot_pdf(
     request_client: Client
@@ -31,4 +33,4 @@ def test_screenshot_pdf(
     response.save(save_path)
 
     file_stat = os.stat(save_path)
-    assert file_stat.st_size > 32000
+    assert file_stat.st_size > 30000

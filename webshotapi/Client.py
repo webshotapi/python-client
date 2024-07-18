@@ -1,6 +1,5 @@
 #  Copyright (c) 2020. WebShotApi All right reserved
 from gawsoft.api_client import Request, Response
-from .Projects import Projects
 from .version import __version__
 import os
 
@@ -42,10 +41,10 @@ class Client(Request):
         :return:
             Response object
         '''
-        
+
         params['url'] = url
         params['image_type'] = image_type
-        return self.request(f'screenshot/image','POST', params)
+        return self.request(f'/screenshot/image','POST', params)
 
     def pdf(self, url:str, params:dict) -> Response:
         '''
@@ -61,7 +60,7 @@ class Client(Request):
 
         params['url'] = url
         params['image_type'] = 'pdf'
-        return self.request('screenshot/image','POST', params)
+        return self.request('/screenshot/image','POST', params)
 
     def extract(self,url:str, params:dict) -> Response:
         """
@@ -73,12 +72,4 @@ class Client(Request):
         @return: Response
         """
         params['url'] = url
-        return self.request('extract','POST', params)
-
-    def projects(self) -> Projects:
-        '''
-        Operation for projects
-
-        @return: Projects
-        '''
-        return Projects(self)
+        return self.request('/extract','POST', params)
