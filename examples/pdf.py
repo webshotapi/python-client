@@ -9,7 +9,7 @@ if __name__ == "__main__":
         API_TOKEN = os.environ['WEBSHOTAPI_API_KEY']
         client = Client(API_TOKEN)
         result = client.pdf('https://www.example.com',{
-            'remove_modals': 1
+            'remove_modals': True
         })
 
         if result.save('/tmp/test.pdf'):

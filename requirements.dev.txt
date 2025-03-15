@@ -1,0 +1,5 @@
+pytest
+pytest-httpserver
+mypy
+twine
+types-urllib3

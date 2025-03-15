@@ -13,10 +13,11 @@ if __name__ == "__main__":
             'extract_html': True,
             'extract_selectors': True,
             'extract_style': 1,
-            'no_cache': True
         })
 
-        print(result.save('/tmp/test_extract.json'))
+        print(result['status_code']);
+        print(result['html'])
+        print(result)
 
 
     except Exception as e:

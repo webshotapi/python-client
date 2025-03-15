@@ -1,4 +1,4 @@
 six
 urllib3
-gawsoft-api-client>=0.0.5
+gawsoft-api-client>=0.0.7
 requests

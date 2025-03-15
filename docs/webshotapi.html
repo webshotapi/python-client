@@ -37,61 +37,7 @@
 </section>
 <section id="module-webshotapi.Client">
 <span id="webshotapi-client-module"></span><h2>webshotapi.Client module<a class="headerlink" href="#module-webshotapi.Client" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="webshotapi.Client.Client">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">webshotapi.Client.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'v1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Webshotapi</span> <span class="pre">Python</span> <span class="pre">client</span> <span class="pre">1.1.2'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#webshotapi.Client.Client" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="webshotapi.Client.Client.extract">
-<span class="sig-name descname"><span class="pre">extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="headerlink" href="#webshotapi.Client.Client.extract" title="Link to this definition">¶</a></dt>
-<dd><p>Extract html selectors with css styles, words with coordinates(x,y,width,height).
-You can also extract html of rendered page and clean text</p>
-<p>&#64;param url: url
-&#64;param params: dict with params
-&#64;return: Response</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="webshotapi.Client.Client.pdf">
-<span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="headerlink" href="#webshotapi.Client.Client.pdf" title="Link to this definition">¶</a></dt>
-<dd><p>Take screenshot and return pdf file</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> – link to website to take screenshot</p></li>
-<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/rest/">https://webshotapi.com/docs/rest/</a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Response object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="webshotapi.Client.Client.screenshot">
-<span class="sig-name descname"><span class="pre">screenshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jpg'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="headerlink" href="#webshotapi.Client.Client.screenshot" title="Link to this definition">¶</a></dt>
-<dd><p>Take screenshot and return png image</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> – link to website to take screenshot</p></li>
-<li><p><strong>params</strong> – dict with parameters check available parameters in <a class="reference external" href="https://webshotapi.com/docs/rest/">https://webshotapi.com/docs/rest/</a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Example<span class="colon">:</span></dt>
-<dd class="field-even"><p>import webshotapi</p>
-<p>TOKEN = ‘PUT_YOUR_TOKEN_HERE’</p>
-<p>client = webshotapi(TOKEN)</p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Response object</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<p>Client for webshotapi server</p>
 </section>
 <section id="webshotapi-projects-module">
 <h2>webshotapi.Projects module<a class="headerlink" href="#webshotapi-projects-module" title="Link to this heading">¶</a></h2>

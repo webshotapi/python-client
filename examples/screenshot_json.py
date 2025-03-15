@@ -10,14 +10,12 @@ if __name__ == "__main__":
         API_TOKEN = os.environ['WEBSHOTAPI_API_KEY']
         client = Client(API_TOKEN)
 
-        result = client.screenshot('https://www.cnn.com',{
+        result = client.screenshot_json('https://www.example.com',{
             'remove_modals': True, # Remove cookies popup with AI
         })
 
-        if result.save('/tmp/test.jpg'):
-            print("File saved")
-        else:
-            print("Error with save file")
+        print(result['url'])
+        print(result)
 
     except Exception as e:
         print("Error:")
