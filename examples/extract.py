@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
         result = client.extract('https://www.example.com',{
             'extract_html': True,
-            'extract_selectors': True,
+            'extract_elements': True,
             'extract_style': 1,
         })
 

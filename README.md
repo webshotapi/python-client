@@ -101,7 +101,7 @@ if __name__ == "__main__":
         #send request
         result = client.extract('https://www.example.com',{
             'no_cache': 1,
-            'extract_selectors': 1,
+            'extract_elements': 1,
             'extract_style': 1,
             'extract_words': 1,
             'extract_html': 1,
@@ -119,14 +119,14 @@ if __name__ == "__main__":
 
 ```json
 {
- "selectors": [
+ "elements": [
       {
          "xpath": "/html[1]",
          "css_selector": "html",
          "x": 0,
          "y": 0,
-         "w": 1920,
-         "h": 413,
+         "width": 1920,
+         "height": 413,
          "style": {
             "visibility": "visible",
             "display": "block",
@@ -174,8 +174,8 @@ if __name__ == "__main__":
          "position": {
             "x": 660,
             "y": 231,
-            "w": 92,
-            "h": 19
+            "width": 92,
+            "height": 19
          },
          "word_index": 26,
          "xpath": "/html[1]/body[1]/div[1]/p[1]",
