@@ -1,11 +1,11 @@
 # WebShotApi.com API client for Python
 
 Capture and store website snapshots effortlessly with our SaaS service. 
-Save images in popular formats such as JPG, PNG, and PDF. 
+Use our AI unique algorithm for remove cookies and popup banner before take screenshot.
+Save images in popular formats such as JPG, PNG, WEBP and PDF. 
 Additionally, extract selectors for every HTML element, 
 complete with coordinates and CSS styles post-browser rendering. 
-Utilize our API to create projects and seamlessly queue up all your URLs. 
-Let our servers handle the workload, ensuring a hassle-free experience for you.
+
 
 Full documentation about our api you can find in this website [Website screenshot API DOCS](https://webshotapi.com/docs/)
 
