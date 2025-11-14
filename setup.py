@@ -15,6 +15,12 @@ def read_version():
         raise RuntimeError("Unable to find __version__ in version.py")
     return match.group(1)
 
+def load_requirements(file_path="requirements.txt"):
+    if not os.path.exists(file_path):
+        return []
+    with open(file_path, "r", encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
 with open('README.md','r') as r:
     long_description = r.read()
 
@@ -42,6 +48,7 @@ setup(
         "Documentation": "http://webshotapi.com/docs/sdk/python/",
         "Source Code": "https://github.com/webshotapi/python-client",
     },
+    install_requires=load_requirements(),
     license="MIT",
     python_requires='>=3.8',
 )
