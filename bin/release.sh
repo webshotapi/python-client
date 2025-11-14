@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to your version.py file
-VERSION_FILE="gawsoft/api_client/version.py"
+VERSION_FILE="webshotapi/version.py"
 
 # Read the current version from version.py
 CURRENT_VERSION=$(grep -oP '(?<=__version__=")[^"]+' "$VERSION_FILE")
