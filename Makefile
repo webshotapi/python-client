@@ -25,3 +25,5 @@ test:
 mypy:
 	mypy --install-types --non-interactive webshotapi/
 
+release:
+	bin/release.sh

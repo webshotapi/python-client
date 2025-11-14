@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to your version.py file
-VERSION_FILE="webshotapi/version.py"
+VERSION_FILE="gawsoft/api_client/version.py"
 
 # Read the current version from version.py
 CURRENT_VERSION=$(grep -oP '(?<=__version__=")[^"]+' "$VERSION_FILE")
@@ -19,7 +19,7 @@ sed -i "s/__version__=\"$CURRENT_VERSION\"/__version__=\"$NEW_VERSION\"/" "$VERS
 
 # Commit the change and create a new tag
 git add .
-git commit -m "Release version $NEW_VERSION"
+git commit -m "Bump version to $NEW_VERSION"
 git tag "v$NEW_VERSION"
 
 ## Push the new tag to the remote repository
