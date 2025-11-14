@@ -7,10 +7,11 @@ from webshotapi import Client
 if __name__ == "__main__":
     try:
 
-        API_TOKEN = os.environ['WEBSHOTAPI_API_KEY']
+        API_TOKEN = os.environ['WEBSHOTAPI_KEY']
         client = Client(API_TOKEN)
 
-        result = client.screenshot('https://www.example.com',{
+        result = client.screenshot({
+            'url': 'https://www.example.com',
             'remove_modals': True, # Remove cookies popup with AI
             'image_type': 'webp'
         })

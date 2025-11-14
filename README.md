@@ -35,6 +35,40 @@ Api key you can generate after register.
 
 # Usage
 
+### Take screenshot video
+Example gif:
+[![](https://raw.githubusercontent.com/webshotapi/php-client/63375165338d074d9b54a076977b489a6d913d2b/images/stripe-video.gif)](https://raw.githubusercontent.com/webshotapi/php-client/63375165338d074d9b54a076977b489a6d913d2b/images/stripe-video.gif)
+
+Link to example mp4: https://github.com/webshotapi/php-client/raw/c77cb5a3d84b58a2dfd92ba30ed6850f83d7a52e/images/stripe-video.mp4
+
+```python
+from webshotapi import Client
+
+if __name__ == "__main__":
+    try:
+        TOKEN = 'YOUR TOKEN HERE'
+        client = Client(TOKEN)
+        
+        result = client.video({
+             'url': 'https://www.stripe.com.com'
+             'remove_modals': True,
+             'scrolling_enable': True,
+             'scrolling_algorithm': "ease_in_quad",
+             'scrolling_scroll_delay': 500,
+             'scrolling_scroll_distance': 1000,
+             'scrolling_scroll_duration': 1500,
+        })
+
+        if result.save('/tmp/testa.jpg'):
+            print("File saved")
+        else:
+            print("Error with save file")
+
+    except Exception as e:
+        print("Error:")
+        print(e)
+```
+
 ### Take screenshot and save jpg to file
 ```python
 from webshotapi import Client
@@ -44,10 +78,9 @@ if __name__ == "__main__":
         TOKEN = 'YOUR TOKEN HERE'
         client = Client(TOKEN)
         
-        result = client.screenshot(
-            'https://www.example.com',{
-            'remove_modals': True,
-            'no_cache': True
+        result = client.screenshot({
+             'url': 'https://www.example.com'
+             'remove_modals': True
         })
 
         if result.save('/tmp/testa.jpg'):
@@ -70,9 +103,8 @@ if __name__ == "__main__":
         TOKEN = 'YOUR TOKEN HERE'
         client = Client(TOKEN)
         
-        result = client.pdf(
-            'https://www.example.com',{
-                'no_cache': 1
+        result = client.pdf({ 
+            'url': 'https://www.example.com'
         })
 
         if result.save('/tmp/test.pdf'):
@@ -99,8 +131,8 @@ if __name__ == "__main__":
         client = Client(TOKEN)
 
         #send request
-        result = client.extract('https://www.example.com',{
-            'no_cache': 1,
+        result = client.extract({
+            'url': 'https://www.example.com',
             'extract_elements': 1,
             'extract_style': 1,
             'extract_words': 1,

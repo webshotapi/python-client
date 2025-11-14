@@ -9,7 +9,7 @@ Then client will connect with localhost:3000. With this host you can mock origin
 
 # Internal test api key for dev environment
 ```sh
-export WEBSHOTAPI_API_KEY=7815696ecbf1c96e6894b779456d330e7815696ecbf1c96e6894b779456d330d
+export WEBSHOTAPI_KEY=7815696ecbf1c96e6894b779456d330e7815696ecbf1c96e6894b779456d330d
 ```
 
 # Prepare tests

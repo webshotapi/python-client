@@ -6,20 +6,19 @@ from webshotapi import Client
 
 if __name__ == "__main__":
     try:
+
         API_TOKEN = os.environ['WEBSHOTAPI_KEY']
         client = Client(API_TOKEN)
 
-        result = client.extract({
+        result = client.video_json({
             'url': 'https://www.example.com',
-            'extract_html': True,
-            'extract_elements': True,
-            'extract_style': 1,
+            'scrolling_enable': True,
+            'video_duration': 7,
+            'remove_modals': True, # Remove cookies popup with AI
         })
 
-        print(result['status_code'])
-        print(result['html'])
+        print(result['url'])
         print(result)
-
 
     except Exception as e:
         print("Error:")

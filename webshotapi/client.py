@@ -1,4 +1,4 @@
-#  Copyright (c) 2020. WebShotApi All right reserved
+#  Copyright (c) 2025. WebShotApi All right reserved
 from gawsoft.api_client import Request, Response
 
 from .client_exception import WebshotapiClientError
@@ -11,61 +11,55 @@ class Client(Request):
     Client for webshotapi server
     """
 
+    _request_timeout = 75
+
     def __init__(
         self,
         api_key: str = "",
-        api_version: str ='v1',
         api_host: str = '',
         user_agent: str = f"Webshotapi Python client {__version__}"
      ):
-        if (not api_key or len(api_key)==0) and 'WEBSHOTAPI_API_KEY' in os.environ:
-            api_key = os.environ['WEBSHOTAPI_API_KEY']
+        if (not api_key or len(api_key)==0) and 'WEBSHOTAPI_KEY' in os.environ:
+            api_key = os.environ['WEBSHOTAPI_KEY']
 
         if (not api_host or len(api_host)==0) and 'WEBSHOTAPI_ENDPOINT' in os.environ:
             api_host = os.environ['WEBSHOTAPI_ENDPOINT']
         elif api_host:
             pass
         else:
-            api_host = "https://api.webshotapi.com"
+            api_host = "https://api.webshotapi.com/v1/"
 
-        super().__init__(api_key, api_version, api_host, user_agent)
+        super().__init__(api_key, api_host, user_agent)
 
-    def screenshot(self, url:str, params:dict) -> Response:
+    def video(self, params:dict) -> Response:
        '''
-           Take screenshot and return image
+           Take video of website and return video binary
 
-           :param url:
-                link to website to take screenshot
            :param params:
-                dict with parameters check available parameters in https://webshotapi.com/docs/rest/
+                dict with parameters check available parameters in https://webshotapi.com/docs/get-started/parameters/
            :return:
                 Response object
         Example:
             >>> client = Client()
-            >>> client.screenshot("https://example.com", {
-                "image_type": "webp"
+            >>> client.video({
+                "video_format": "mp4"
             })
 
        '''
 
-       params['url'] = url
-       return self.request(f'/screenshot/image','POST', params)
+       return self.request(f'video/binary','POST', params)
 
-
-    def screenshot_json(self, url: str, params: dict) -> ScreenshotJsonResponse:
+    def video_json(self, params: dict) -> ScreenshotJsonResponse:
         '''
-        Take screenshot and return url to image
+        Take video and return url to video file
 
-        :param url:
-             link to website to take screenshot
         :param params:
-             dict with parameters check available parameters in https://webshotapi.com/docs/rest/
+             dict with parameters check available parameters in https://webshotapi.com/docs/get-started/parameters/
         :return:
              Response object
         '''
 
-        params['url'] = url
-        response = self.request(f'/screenshot/json', 'POST', params)
+        response = self.request(f'video/json', 'POST', params)
         if response.status_code != 200:
             raise WebshotapiClientError(f"Response return status code: {response.status_code}")
 
@@ -76,36 +70,70 @@ class Client(Request):
             expire_sec = parsed_data['expire_sec']
         )
 
-    def pdf(self, url:str, params:dict) -> Response:
+    def screenshot(self, params:dict) -> Response:
+       '''
+           Take screenshot and return image
+
+           :param params:
+                dict with parameters check available parameters in https://webshotapi.com/docs/get-started/parameters/
+           :return:
+                Response object
+        Example:
+            >>> client = Client()
+            >>> client.screenshot("https://example.com", {
+                "image_type": "webp"
+            })
+
+       '''
+
+       return self.request(f'screenshot/binary','POST', params)
+
+
+    def screenshot_json(self, params: dict) -> ScreenshotJsonResponse:
+        '''
+        Take screenshot and return url to image
+
+        :param params:
+             dict with parameters check available parameters in https://webshotapi.com/docs/get-started/parameters/
+        :return:
+             Response object
+        '''
+
+        response = self.request(f'screenshot/json', 'POST', params)
+        if response.status_code != 200:
+            raise WebshotapiClientError(f"Response return status code: {response.status_code}")
+
+        parsed_data = response.data()
+
+        return ScreenshotJsonResponse(
+            url = parsed_data['url'],
+            expire_sec = parsed_data['expire_sec']
+        )
+
+    def pdf(self, params:dict) -> Response:
         '''
         Take screenshot and return pdf file
 
-        :param url:
-            link to website to take screenshot
         :param params:
-            dict with parameters check available parameters in https://webshotapi.com/docs/rest/
+            dict with parameters check available parameters in https://webshotapi.com/docs/get-started/parameters/
         :return:
             Response object
         '''
 
-        params['url'] = url
         params['image_type'] = 'pdf'
-        return self.request('/screenshot/image','POST', params)
+        return self.request('screenshot/binary','POST', params)
 
-    def extract(self,url:str, params:dict) -> ExtractResponse:
+    def extract(self, params:dict) -> ExtractResponse:
         """
         Extract html selectors with css styles, words with coordinates(x,y,width,height).
         You can also extract html of rendered page and clean text
 
-        @param url: url
-            link to website to take screenshot
         @param params: dict with params
-            dict with parameters check available parameters in https://webshotapi.com/docs/rest/
+            dict with parameters check available parameters in https://webshotapi.com/docs/get-started/parameters/
 
         @return: ExtractResponse
         """
-        params['url'] = url
-        response = self.request('/extract', 'POST', params)
+        response = self.request('extract', 'POST', params)
         if response.status_code != 200:
             raise WebshotapiClientError(f"Response return status code: {response.status_code}")
 
@@ -121,3 +149,14 @@ class Client(Request):
             saved_in_cloud=parsed_data["saved_in_cloud"]
         )
 
+    def info(self) -> dict:
+        """
+        Get info about your account
+
+        @return: dict
+        """
+        response = self.request('info', 'GET')
+        if response.status_code != 200:
+            raise WebshotapiClientError(f"Response return status code: {response.status_code}")
+
+        return response.data()

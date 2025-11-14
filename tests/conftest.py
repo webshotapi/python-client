@@ -5,4 +5,4 @@ import os
 
 @pytest.fixture
 def request_client() -> Client:
-    return Client(os.environ['WEBSHOTAPI_API_KEY'], "v1", os.environ['WEBSHOTAPI_ENDPOINT'])
+    return Client(os.environ['WEBSHOTAPI_KEY'], api_host=os.environ['WEBSHOTAPI_ENDPOINT'])
