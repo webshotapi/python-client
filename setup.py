@@ -6,10 +6,6 @@ ROOT_PATH = os.path.dirname(__file__)
 PKG_NAME = "webshotapi"
 PKG_PATH = os.path.join(ROOT_PATH, PKG_NAME.replace("-", "_"))
 
-def load_requirements(file_path='requirements.txt'):
-    with open(file_path, 'r') as file:
-        return [line.strip() for line in file if line.strip()]
-
 with open('README.md','r') as r:
     long_description = r.read()
 
@@ -37,7 +33,6 @@ setup(
         "Documentation": "http://webshotapi.com/docs/sdk/python/",
         "Source Code": "https://github.com/webshotapi/python-client",
     },
-    install_requires=load_requirements(),
     license="MIT",
     python_requires='>=3.8',
 )
