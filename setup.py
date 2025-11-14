@@ -1,17 +1,26 @@
 from setuptools import setup, find_packages,  find_namespace_packages
-from webshotapi.version import __version__
 import os
+import re
 
 ROOT_PATH = os.path.dirname(__file__)
 PKG_NAME = "webshotapi"
 PKG_PATH = os.path.join(ROOT_PATH, PKG_NAME.replace("-", "_"))
+
+def read_version():
+    version_file = os.path.join(PKG_NAME, "version.py")
+    with open(version_file, "r", encoding="utf-8") as f:
+        content = f.read()
+    match = re.search(r'__version__\s*=\s*"([^"]+)"', content)
+    if not match:
+        raise RuntimeError("Unable to find __version__ in version.py")
+    return match.group(1)
 
 with open('README.md','r') as r:
     long_description = r.read()
 
 setup(
     name='webshotapi',
-    version=__version__,
+    version=read_version(),
     packages=find_packages(exclude=["tests", "tests.*"]),
     author="WebShotApi.com",
     author_email="contact@webshotapi.com",
