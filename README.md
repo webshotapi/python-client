@@ -43,23 +43,24 @@ Link to example mp4: https://github.com/webshotapi/php-client/raw/c77cb5a3d84b58
 
 ```python
 from webshotapi import Client
+import os
 
 if __name__ == "__main__":
     try:
-        TOKEN = 'YOUR TOKEN HERE'
+        TOKEN = os.getenv('WEBSHOTAPI_KEY','YOUR TOKEN HERE')
         client = Client(TOKEN)
-        
+
         result = client.video({
-             'url': 'https://www.stripe.com.com'
-             'remove_modals': True,
-             'scrolling_enable': True,
-             'scrolling_algorithm': "ease_in_quad",
-             'scrolling_scroll_delay': 500,
-             'scrolling_scroll_distance': 1000,
-             'scrolling_scroll_duration': 1500,
+            'url': 'https://www.stripe.com',
+            'remove_modals': True,
+            'scrolling_enable': True,
+            'scrolling_algorithm': "ease_in_quad",
+            'scrolling_scroll_delay': 500,
+            'scrolling_scroll_distance': 1000,
+            'scrolling_scroll_duration': 1500,
         })
 
-        if result.save('/tmp/testa.jpg'):
+        if result.save('/tmp/testa.mp4'):
             print("File saved")
         else:
             print("Error with save file")
@@ -72,14 +73,15 @@ if __name__ == "__main__":
 ### Take screenshot and save jpg to file
 ```python
 from webshotapi import Client
+import os
 
 if __name__ == "__main__":
     try:
-        TOKEN = 'YOUR TOKEN HERE'
+        TOKEN = os.getenv('WEBSHOTAPI_KEY','YOUR TOKEN HERE')
         client = Client(TOKEN)
         
         result = client.screenshot({
-             'url': 'https://www.example.com'
+             'url': 'https://www.example.com',
              'remove_modals': True
         })
 
@@ -97,10 +99,11 @@ if __name__ == "__main__":
 You can convert your html page to PDF. For example you can prepare html invoice template and convert that website to PDF
 ```python
 from webshotapi import Client
+import os
 
 if __name__ == "__main__":
     try:
-        TOKEN = 'YOUR TOKEN HERE'
+        TOKEN = os.getenv('WEBSHOTAPI_KEY','YOUR TOKEN HERE')
         client = Client(TOKEN)
         
         result = client.pdf({ 
@@ -122,26 +125,26 @@ Revolutionize your web development experience with our unparalleled software. Ex
 #### Sample script:
 ```python
 from webshotapi import Client
+import os
 
 if __name__ == "__main__":
     try:
-
-        #create object
-        TOKEN = 'YOUR TOKEN HERE'
+        TOKEN = os.getenv('WEBSHOTAPI_KEY','YOUR TOKEN HERE')
         client = Client(TOKEN)
 
         #send request
         result = client.extract({
             'url': 'https://www.example.com',
-            'extract_elements': 1,
+            'extract_elements': True,
             'extract_style': 1,
-            'extract_words': 1,
-            'extract_html': 1,
-            'extract_text': 1
+            'extract_words': True,
+            'extract_html': True,
+            'extract_text': True
         })
         
         #print json data from result
-        print(result.data())
+        print(result)
+        print(result['html'])
 
     except Exception as e:
         print("Error:")
