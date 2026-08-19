@@ -20,7 +20,7 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 test:
-	venv/bin/pytest ./tests
+	./.venv/bin/pytest ./tests
 
 mypy:
 	mypy --install-types --non-interactive webshotapi/
